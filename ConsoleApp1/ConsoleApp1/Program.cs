@@ -30,6 +30,7 @@ namespace ConsoleApp1
             int.TryParse(s1, out idata);
             fdata = (float)result.idata;
             sdata = new StringBuilder().Append(fdata).ToString();
+            sdata = fdata +"";
 
             /*
             String s1, s2;
