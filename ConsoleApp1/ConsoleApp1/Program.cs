@@ -10,6 +10,28 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+
+            var s1 = System.Console.ReadLine();
+            (int idata ,  float fdata, String sdata)result;
+
+
+            result.idata = Convert.ToInt32(s1);
+            result.fdata = result.idata * 1.0F;
+            result.sdata = Convert.ToString(result.fdata);
+
+            result.idata = int.Parse(s1);
+            result.fdata = result.idata;
+            result.sdata = String.Format("{0:F2}" , result.fdata);
+
+            int idata = default(int);
+            float fdata = default(float);
+            string sdata ;
+
+            int.TryParse(s1, out idata);
+            fdata = (float)result.idata;
+            sdata = new StringBuilder().Append(fdata).ToString();
+
+            /*
             String s1, s2;
 
             System.Console.Write("Input s1 : "); s1 = System.Console.ReadLine();
@@ -32,6 +54,7 @@ namespace ConsoleApp1
             String[] strarr = { "The String is", s1 + ", " + s2 };
             foreach (var value in strarr)
                 System.Console.WriteLine(value);
+            */
         }
     }
 }
