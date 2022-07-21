@@ -10,6 +10,19 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+
+            
+
+            System.Console.Write("input float : ");var fnum01 = System.Console.ReadLine();
+            System.Console.Write("input float : ");var fnum02 = System.Console.ReadLine();
+            System.Console.WriteLine("+ : {0}" , float.Parse(fnum01) + float.Parse(fnum02));
+            System.Console.WriteLine("- : {0}" , float.Parse(fnum01) - float.Parse(fnum02));
+            System.Console.WriteLine("/ : {0}" , float.Parse(fnum01) / float.Parse(fnum02));
+            System.Console.WriteLine("* : {0}" , float.Parse(fnum01) * float.Parse(fnum02));
+
+
+
+            /*
             //참고 사이트 https://docs.microsoft.com/ko-kr/dotnet/api/system.int32.parse?view=net-6.0
             //입력 받을 변수 선언 및 초기화
             var s1 = System.Console.ReadLine();
@@ -36,6 +49,7 @@ namespace ConsoleApp1
             fdata = (float)result.idata;                            //명시적 형변환
             sdata = new StringBuilder().Append(fdata).ToString();   //String , StringBuilder 차이점 String 매회할당 , StringBuilder 1회 할당 (단 문자열이 계속 변경된다면 불이익)
             sdata = fdata +"";                                      //묵시적 형변환 (float) + (String) = (String)
+            */
 
             /*
             String s1, s2;
