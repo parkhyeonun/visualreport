@@ -1,0 +1,7 @@
+C:\Users\pc\Desktop\Study\visualreport\ConsoleApp1\Bob\obj\Debug\Bob.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\Study\visualreport\ConsoleApp1\Bob\obj\Debug\Bob.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\Study\visualreport\ConsoleApp1\Bob\bin\Debug\Bob.exe.config
+C:\Users\pc\Desktop\Study\visualreport\ConsoleApp1\Bob\bin\Debug\Bob.exe
+C:\Users\pc\Desktop\Study\visualreport\ConsoleApp1\Bob\bin\Debug\Bob.pdb
+C:\Users\pc\Desktop\Study\visualreport\ConsoleApp1\Bob\obj\Debug\Bob.exe
+C:\Users\pc\Desktop\Study\visualreport\ConsoleApp1\Bob\obj\Debug\Bob.pdb
