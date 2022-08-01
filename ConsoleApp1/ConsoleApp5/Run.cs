@@ -17,15 +17,15 @@ namespace ConsoleApp5
 
         public void Strat()
         {
-            Shuffle();
+            Shuffle();              //컴퓨터 랜덤 숫자 셔플
 
             while (bswtich)
             {
-                PrintStart(5, ++round); 
-                ReadBoard();
-                socre();
-                Result();
-                Initialize();
+                PrintStart(++round); //시작문구 출력
+                ReadBoard();         //3글자 입력
+                socre();             //점수 계산
+                PrintResult();       //결과 출력
+                Initialize();        //초기화
             }
         }
 
@@ -33,11 +33,12 @@ namespace ConsoleApp5
         {
             Random ran = new Random();
             int iran = 0;
+
             for (int i = 0; i < MaxBoard; )
             {
                 iran = ran.Next(1, 10);
-                if (listBoard.Contains(Convert.ToString(iran)))
-                {
+                if (listBoard.Contains(Convert.ToString(iran)))        //랜덤 숫자 중복 방지 List 방법 1
+                {                                                      //미리리스트에 숫자 1~9 넣고 랜덤으로 스위칭하여도 됨 방법2
                     iran = ran.Next(1, 10);
                 }
                 else
@@ -58,9 +59,6 @@ namespace ConsoleApp5
             {
                 listRead.Add(sboard.Substring(i,1));
             }
-
-
-
 
         }
 
@@ -83,58 +81,29 @@ namespace ConsoleApp5
 
         }
 
-        void Result()
+        void PrintResult()
         {
-            if(istrike == 3)
+            if(istrike == 3) //정답입니다.
             {
-                PrintResult(5,0,0,0);
+                System.Console.WriteLine("result : 정답입니다.\n");
                 bswtich = false;
+                System.Console.WriteLine("고생하셨습니다! 총 플레이 {0}라운드 하셨습니다\n", round);
             }
-            else if(round % 3 == 0)
+            else if(iboll == 3) //아웃입니다.
             {
-                PrintResult(4,0,0,0);
+                System.Console.WriteLine("result : 아웃입니다.\n");
             }
-            else
+            else //게임 계속진행
             {
-                PrintResult(3,istrike,iboll ,0);
+                System.Console.WriteLine("result : S = {0}개 , B = {1} \n", istrike, iboll);
             }
         }
 
-        void PrintStart(int inum, int inum2)
+        void PrintStart(int inum)
         {
-            switch (inum)
-            {
-                case 5:
-                    System.Console.WriteLine("라운드 : {0}", inum2);
-                    break;
-                default:
-                    break;
-            }
-
+                    System.Console.WriteLine("라운드 : {0}", inum);
         }
 
-        void PrintResult(int inum, int istrike ,int iboll , int round)
-        {
-            switch (inum)
-            {
-
-                case 3:
-                    System.Console.WriteLine("result : S = {0}개 , B = {1} \n" , istrike ,iboll);
-                    break;
-                case 4:
-                    System.Console.WriteLine("result : 아웃입니다.\n");
-                    break;
-                case 5:
-                    System.Console.WriteLine("result : 정답입니다.\n");
-                    break;
-                case 6:
-                    System.Console.WriteLine("고생하셨습니다! 총 플레이 {0}라운드 하셨습니다\n", round);
-                    break;
-                default:
-                    break;
-            }
-            
-        }
 
         void Initialize()
         {
