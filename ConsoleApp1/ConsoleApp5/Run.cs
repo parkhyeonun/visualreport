@@ -31,6 +31,7 @@ namespace ConsoleApp5
 
         void Shuffle()
         {
+
             Random ran = new Random();
             int iran = 0;
 
@@ -72,7 +73,7 @@ namespace ConsoleApp5
                 {
                     istrike++;
                 }
-                else
+                else if(listBoard.Contains(listRead[i]))
                 {
                     iboll++;
                 }
@@ -89,7 +90,7 @@ namespace ConsoleApp5
                 bswtich = false;
                 System.Console.WriteLine("고생하셨습니다! 총 플레이 {0}라운드 하셨습니다\n", round);
             }
-            else if(iboll == 3) //아웃입니다.
+            else if(iboll == 0) //아웃입니다.
             {
                 System.Console.WriteLine("result : 아웃입니다.\n");
             }
