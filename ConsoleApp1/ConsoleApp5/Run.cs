@@ -8,7 +8,7 @@ namespace ConsoleApp5
 {
     class Run
     {
-        public const int MaxBoard= 3;
+        public int MaxBoard= 3;
         int istrike, iboll , round;
         bool bswtich = true;
 
@@ -17,16 +17,22 @@ namespace ConsoleApp5
 
         public void Strat()
         {
+            ReadMaxBoard();
             Shuffle();              //컴퓨터 랜덤 숫자 셔플
 
             while (bswtich)
             {
+               
                 PrintStart(++round); //시작문구 출력
                 ReadBoard();         //3글자 입력
                 socre();             //점수 계산
                 PrintResult();       //결과 출력
                 Initialize();        //초기화
             }
+        }
+        void ReadMaxBoard()
+        {
+            System.Console.Write("입력 받을 숫자 갯수를 입력하세요."); MaxBoard = int.Parse(System.Console.ReadLine());
         }
 
         void Shuffle()
@@ -55,7 +61,7 @@ namespace ConsoleApp5
         void ReadBoard()
         {
             String sboard = "";
-            System.Console.Write("확인하고 싶은 숫자 3개를 써주세요(띄어쓰기 없음, 안적기 없음)"); sboard = System.Console.ReadLine();
+            System.Console.Write("확인하고 싶은 숫자 {0}개를 써주세요(띄어쓰기 없음, 안적기 없음)" , MaxBoard); sboard = System.Console.ReadLine();
             for (int i = 0; i < MaxBoard; i++)
             {
                 listRead.Add(sboard.Substring(i,1));
@@ -66,7 +72,7 @@ namespace ConsoleApp5
         void socre()
         {
             
-            for (int i = 0; i < listBoard.Count ; i++)
+            for (int i = 0; i < MaxBoard; i++)
             {
              
                 if(listBoard[i] == listRead[i])
@@ -84,7 +90,7 @@ namespace ConsoleApp5
 
         void PrintResult()
         {
-            if(istrike == 3) //정답입니다.
+            if(istrike == MaxBoard) //정답입니다.
             {
                 System.Console.WriteLine("result : 정답입니다.\n");
                 bswtich = false;

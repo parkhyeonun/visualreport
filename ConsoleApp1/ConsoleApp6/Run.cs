@@ -62,7 +62,9 @@ namespace ConsoleApp6
             }
 
             System.Console.WriteLine();
+
             System.Console.WriteLine(" 번호는 : " + lotto.ToString() + "입니다") ;
+
             System.Console.WriteLine();
 
         }
